@@ -17,14 +17,14 @@
 <div class="container">
   <div class="right">
     <ul>
-      <li>launchDate: {{ item?.launchDate }}</li>
-      <li>launchType: {{ item?.launchType }}</li>
-      <li>name: {{ item?.name }}</li>
-      <li>payload: {{ item?.payload }}</li>
+      <li>launchDate: {{ launch?.launchDate }}</li>
+      <li>launchType: {{ launch?.launchType }}</li>
+      <li>name: {{ launch?.name }}</li>
+      <li>payload: {{ launch?.payload }}</li>
     </ul>
   </div>
-  <div class="left" #item *ngFor="let item of launchesList$ | async">
-    <button #item (click)="onSelectOfLaunch(item)">
+  <div class="left" *ngFor="let item of launchesList$ | async">
+    <button (click)="onSelectOfLaunch(item)">
       {{ item.name }}
     </button>
   </div>
